@@ -1,6 +1,5 @@
 package ru.netology.profile;
 
 public interface SystemProfile {
-     String getProfile();
+	String getProfile();
 }
-

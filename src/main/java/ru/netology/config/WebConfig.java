@@ -11,14 +11,14 @@ import ru.netology.profile.ProductionProfile;
 public class WebConfig {
 
 	@Bean
-	@ConditionalOnProperty(prefix = "netology.profile", name = "dev")
-    public SystemProfile devProfile() {
-        return new DevProfile();
-    }
+	@ConditionalOnProperty(prefix = "netology.profile", name = "dev", havingValue = "true", matchIfMissing = false)
+	public SystemProfile devProfile() {
+		return new DevProfile();
+	}
 
-    @Bean
-	@ConditionalOnProperty(prefix = "netology.profile", name = "prod")
-    public SystemProfile prodProfile() {
-        return new ProductionProfile();
-    }
+	@Bean
+	@ConditionalOnProperty(prefix = "netology.profile", name = "dev", havingValue = "false", matchIfMissing = false)
+	public SystemProfile prodProfile() {
+		return new ProductionProfile();
+	}
 }
