@@ -11,7 +11,7 @@ import ru.netology.profile.ProductionProfile;
 public class WebConfig {
 
 	@Bean
-	@ConditionalOnProperty(prefix = "netology.profile", name = "dev", havingValue = "true", matchIfMissing = false)
+	@ConditionalOnProperty(prefix = "netology.profile", name = "dev", havingValue = "true", matchIfMissing = true)
 	public SystemProfile devProfile() {
 		return new DevProfile();
 	}
